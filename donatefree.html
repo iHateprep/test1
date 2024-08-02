@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to help keep us going!</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #a506fe;
+            color: white;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: white;
+            color: #a506fe;
+        }
+
+        .nav-buttons a {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup, .signin {
+            background-color: white;
+            color: #a506fe;
+            border: 2px solid white;
+        }
+
+        .signup:hover, .signin:hover {
+            background-color: #a506fe;
+            color: white;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .crypto-info {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 2rem auto;
+            border: 1px solid #e0e0e0;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .crypto-info h2 {
+            color: #a506fe;
+            margin-bottom: 1rem;
+        }
+
+        .crypto-info .description-box {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .crypto-info .donation-section {
+            margin-bottom: 2rem;
+        }
+
+        .crypto-info .crypto-address {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .crypto-info .crypto-address img {
+            max-width: 150px;
+            margin-bottom: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .crypto-info .crypto-address p {
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 2rem;
+            gap: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #a506fe;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .donation-amount label {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">iHate the Cali Real Estate Exam</div>
+        <ul>
+            <li><a href="index.html" class="nav-item">Home</a></li>
+            <li><a href="aboutfree.html" class="nav-item">About</a></li>
+            <li><a href="contactfree.html" class="nav-item">Contact</a></li>
+            <li><a href="articlesfree.html" class="nav-item">Articles</a></li>
+        </ul>
+    </nav>
+
+    <div class="crypto-info">
+        <h2><strong>Donate to help keep us going!</strong></h2>
+        <div class="description-box">
+            <p>We believe education should be cheap. Prep companies make millions and have a lot of useless overhead. We want to stay small and lean and focus on having up-to-date content. We only need a fraction of what Big Prep earns to do a better job.</p>
+        </div>
+        <div class="description-box">
+            <p><strong>How much do I donate?</strong> For every month you use us, donate one hour of what you make. Meaning... If you make $17 an hour, donate $17. If you are a highly paid lawyer who makes $200 an hour, donate $200. If you make $7 an hour, donate $7.</p>
+        </div>
+        <div class="donation-section">
+            <p><strong>Bitcoin</strong></p>
+            <div class="crypto-address">
+                <img src="btcfree.png" alt="Bitcoin QR Code">
+                <p>Address: bc1qp7uedh6gmjvn4c55vqnqp2vjzur2ggna94rykg</p>
+            </div>
+        </div>
+        <div class="donation-section">
+            <p><strong>Ethereum</strong></p>
+            <div class="crypto-address">
+                <img src="ethfree.png" alt="Ethereum QR Code">
+                <p>Address: 0x985186856A5568429124f24139Fb38D909E72c9a</p>
+            </div>
+        </div>
+        <div class="donation-section">
+            <p><strong>Qubic</strong></p>
+            <div class="crypto-address">
+                <img src="qubicfree.png" alt="Qubic QR Code">
+                <p>Address: MKYSFZVVWQTIDDGCJMWBDFZZNGXAAVDDYVOWBRJSPAACHOWEWGYPLRBDBBHJ</p>
+            </div>
+        </div>
+        <div class="donation-section">
+            <p><strong>Solana</strong></p>
+            <div class="crypto-address">
+                <img src="solfree.png" alt="Solana QR Code">
+                <p>Address: 4hCVc9w2M9ypor8Je9ZFcb99J2FfyGTip5aj5okbVdrj</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">iHate the Cali Real Estate Exam</div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 iHate the Cali Real Estate Exam. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Your existing JavaScript if any
+    </script>
+</body>
+</html>

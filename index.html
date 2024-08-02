@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iHate the Cali Real Estate Exam</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #d1c4ff 0%, #f8f8ff 50%, #fff 100%);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #a506fe;
+            color: white;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: white;
+            color: #a506fe;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+
+        .content {
+            flex: 1;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #a506fe;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(165, 6, 254, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #8405cb;
+            box-shadow: 0 6px 8px rgba(165, 6, 254, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 10px;
+            border: 2px solid #a506fe;
+            border-radius: 10px;
+            background-color: rgba(165, 6, 254, 0.1);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .about-section {
+            background: linear-gradient(to bottom, #fff, #f38984);
+            padding: 6rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tablet-frame {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .tablet-frame p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            border-left: 4px solid #a506fe;
+            padding-left: 1rem;
+        }
+
+        .about-button {
+            display: inline-block;
+            background-color: #a506fe;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(165, 6, 254, 0.3);
+        }
+
+        .about-button:hover {
+            background-color: #8405cb;
+            box-shadow: 0 6px 8px rgba(165, 6, 254, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .highlight-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .angry-image-container {
+            width: 100%;
+            max-width: 560px;
+            padding: 10px;
+            border: 2px solid #a506fe;
+            border-radius: 10px;
+            background-color: rgba(165, 6, 254, 0.1);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .angry-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            max-height: 315px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 2rem;
+            gap: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #a506fe;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                flex-direction: row;
+                align-items: center;
+                gap: 4rem;
+            }
+
+            .content {
+                margin-bottom: 0;
+            }
+
+            .image-section {
+                flex: 1;
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                gap: 1rem;
+            }
+
+            .tablet-frame {
+                padding: 1.5rem;
+            }
+
+            .tablet-frame p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">iHate the Cali Real Estate Exam</div>
+        <ul>
+            <li><a href="ihateindexfree.html" class="nav-item">Home</a></li>
+            <li><a href="donatefree.html" class="nav-item">Donate</a></li>
+            <li><a href="aboutfree.html" class="nav-item">About</a></li>
+            <li><a href="contactfree.html" class="nav-item">Contact</a></li>
+            <li><a href="articlesfree.html" class="nav-item">Articles</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="content">
+            <h1>FREE Real Estate Exam Prep for the California Salesperson state exam.</h1>
+            <p>Practice tests, vocabulary tools, and more. Everything you need to pass the CA state exam.</p>
+            <div class="cta-buttons">
+                <a href="studyhome.html" class="cta-button">Click Here to Study!</a>
+            </div>
+            <!-- Add audio player here -->
+            <audio controls>
+                <source src="Ihate.m4a" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="image-section">
+            <div class="image-container">
+                <img src="angrywmfree.webp" alt="Angry woman studying for California Real Estate Exam">
+            </div>
+        </div>
+    </main>
+
+    <section class="about-section">
+        <div class="highlight-box">
+            <p>500+ Practice questions, 300 vocabulary terms you need to know, and a comprehensive list of Videos from YouTube and TikTok.</p>
+        </div>
+        <div class="angry-image-container">
+            <img src="angrybw.webp" alt="Angry person studying for the real estate exam">
+        </div>
+        <div class="tablet-frame">
+            <p>Studying sucks. Most of us can agree on this. However, it's a necessary step in achieving certain goals in life. Love and hate are two sides of the same coin, so in reality, we actually love the real estate exam. It's a play on words, of course, and highlights the anxiety, the pain, the tension in your throat and chest that you feel when you sit down to study. Embrace the pain! It's the first step in starting your study journey and likely the most important.</p>
+        </div>
+        <a href="aboutfree.html" class="about-button">About</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">iHate the Cali Real Estate Exam</div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 iHate the Cali Real Estate Exam. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

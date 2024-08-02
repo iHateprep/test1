@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Practice Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1e2124;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #2c2f33;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2c2f33;
+            padding: 0.5rem;
+        }
+
+        #backButton {
+            background-color: #40e0d0;
+            color: #2c2f33;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        #backButton:hover {
+            background-color: #3bcdc0;
+            transform: scale(1.05);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 0;
+        }
+
+        .question {
+            background-color: #2c2f33;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h2 {
+            color: #40e0d0;
+            margin-top: 0;
+        }
+
+        .question p {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .answer {
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .answer:hover {
+            background-color: #3a3d42;
+        }
+
+        .answer label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: #ffffff;
+        }
+
+        .answer input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .feedback {
+            margin-top: 1rem;
+            font-weight: bold;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .feedback.correct {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+
+        .feedback.incorrect {
+            background-color: #f44336;
+            color: #ffffff;
+        }
+
+        #score {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: #40e0d0;
+            color: #2c2f33;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vocabulary</h1>
+        <nav>
+            <button id="backButton">Back to Practice Tests</button>
+        </nav>
+    </header>
+    <main>
+        <div id="quizContainer"></div>
+    </main>
+    <div id="score">Score: <span id="scoreValue">0</span>%</div>
+
+    <script>
+        // INSERT FULL SET OF QUESTIONS HERE
+        const questions = [
+            {
+                question: "What is '1031 Tax Deferred Exchange'?",
+                answers: [
+                    "The right of a property owner to reclaim property before it is sold through foreclosure.",
+                    "A provision in the IRS code that allows investors to defer paying capital gains taxes on investment properties when they are sold, as long as another 'like-kind' property is purchased with the profit gained.",
+                    "The profit earned from the sale of an asset, such as real estate, that is greater than its purchase price.",
+                    "The use of a property that is most likely to produce the greatest net return over a given period."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What does 'Abstract of Title' mean?",
+                answers: [
+                    "Knowledge that a person has actually gained or has been directly given about a legal matter.",
+                    "A summarized history of the title to a property, including all transfers, conveyances, legal proceedings, and any other encumbrances affecting the property.",
+                    "The price a property would sell for in an open market under normal conditions.",
+                    "A residential property designed to house more than one family."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is 'Acceleration Clause'?",
+                answers: [
+                    "A reduction in property value due to wear and tear or age.",
+                    "A deed that conveys ownership of real property from a grantor to a grantee.",
+                    "A clause in a mortgage or loan contract that allows the lender to demand full repayment of the loan if the borrower defaults or violates terms of the contract.",
+                    "Agreement by all parties to the terms of a contract."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What does 'Accession' mean?",
+                answers: [
+                    "A lien on property for unpaid labor or materials.",
+                    "A fact that would be likely to affect a buyer's decision to purchase a property.",
+                    "The legal principle that allows the owner of property to become the owner of additions or improvements to that property.",
+                    "The most profitable legal use of a property."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is 'Acknowledgement'?",
+                answers: [
+                    "A formal declaration before a notary public or other authorized officer, affirming that the signing of a document is a voluntary act.",
+                    "A will written entirely by the testator in his or her own handwriting.",
+                    "To pledge property as security for a loan without giving up possession.",
+                    "An essential element of a valid contract; the purpose of the contract must be legal."
+                ],
+                correctAnswer: 0
+            }
+        ];
+
+        let currentScore = 0;
+        const quizContainer = document.getElementById('quizContainer');
+        const scoreValue = document.getElementById('scoreValue');
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function createQuiz() {
+            shuffleArray(questions);
+            questions.forEach((q, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'question';
+                questionElement.innerHTML = `
+                    <h2>Question ${index + 1}</h2>
+                    <p>${q.question}</p>
+                    <ul class="answers">
+                        ${q.answers.map((answer, i) => `
+                            <li class="answer">
+                                <label>
+                                    <input type="radio" name="q${index}" value="${i}">
+                                    ${answer}
+                                </label>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <div class="feedback"></div>
+                `;
+                quizContainer.appendChild(questionElement);
+
+                const radioButtons = questionElement.querySelectorAll('input[type="radio"]');
+                radioButtons.forEach(radio => {
+                    radio.addEventListener('change', () => checkAnswer(questionElement, q.correctAnswer, index));
+                });
+            });
+        }
+
+        function checkAnswer(questionElement, correctAnswer, questionIndex) {
+            const selectedAnswer = questionElement.querySelector('input[type="radio"]:checked');
+            const feedbackElement = questionElement.querySelector('.feedback');
+
+            if (selectedAnswer) {
+                const isCorrect = parseInt(selectedAnswer.value) === correctAnswer;
+                feedbackElement.textContent = isCorrect ? 'Correct!' : `Uh Oh! The correct answer is: ${questions[questionIndex].answers[correctAnswer]}`;
+                feedbackElement.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+
+                if (isCorrect) {
+                    currentScore++;
+                }
+
+                updateScore();
+            }
+        }
+
+        function updateScore() {
+            const totalQuestions = questions.length;
+            const scorePercentage = Math.round((currentScore / totalQuestions) * 100);
+            scoreValue.textContent = scorePercentage;
+        }
+
+        createQuiz();
+    </script>
+</body>
+</html>
